@@ -8,6 +8,7 @@ const kelvins = document.getElementById("kels");
 const farenheit = document.getElementById("fars");
 const celsius = document.getElementById("cels");
 const condition = document.getElementById("cond");
+const icon = document.getElementById("icon");
 
 //zip is just an empty value that will be used when a user inputs a valid zip code
 let zip = "";
@@ -50,7 +51,9 @@ function render() {
     kelvins.innerHTML = Math.floor(wxInfo.main.temp) + " K";
     farenheit.innerHTML = Math.floor((wxInfo.main.temp - 273.15) * 9/5 + 32) + " F";
     celsius.innerHTML = Math.floor(wxInfo.main.temp - 273.15) + " C";
-    condition.innerHTML = `Weather: ${wxInfo.weather[0].main} <br> Skies: ${wxInfo.weather[0].description}`
+    condition.innerHTML = `Visibility: ${wxInfo.weather[0].main} <br> Skies: ${wxInfo.weather[0].description}`
+    // could set up a conditional with a toLocaleDate to grab day or night icon
+    icon.src = `http://openweathermap.org/img/wn/${wxInfo.weather[0].icon}@4x.png`
 }
 
 // init function after all the other functions
