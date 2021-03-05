@@ -19,16 +19,20 @@
         <div class="row">
             <h1>Weather App</h1>
         </div>
+        <div class="alert alert-info" role="alert" id="alert">
+            Looks like there was an issue :(
+        </div>
         <div class="row">
             <div class="col-6">
                 <div class="input-group flex-nowrap">
                     <span class="input-group-text" id="addon-wrapping">Zip Code</span>
-                    <input type="text" class="form-control" placeholder="Enter 5 Digit Zip Code" aria-label="Username"
-                        aria-describedby="addon-wrapping">
+                    <input type="text" class="form-control" id="zipEnter" placeholder="Enter Zip Code"
+                        aria-label="Username" aria-describedby="addon-wrapping">
                 </div>
             </div>
             <div class="col-6">
-                <input class="btn btn-primary" type="submit" value="Get Wx">
+                <button type="button" class="btn btn-success" id="wxSubmit">Submit</button>
+                <!-- <input class="btn btn-primary" id ="wxSubmit" type="submit" value="Get Wx"> -->
             </div>
         </div>
         <div class="row">
@@ -52,19 +56,19 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Kelvin</h5>
-                            <p class="card-text">Temp in Kelvins</p>
+                            <p class="card-text" id="kels">Temp in Kelvins</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Farenheit</h5>
-                            <p class="card-text">Temp in F</p>
+                            <p class="card-text" id="fars">Temp in F</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Celcius</h5>
-                            <p class="card-text">Temp in C</p>
+                            <h5 class="card-title">Celsius</h5>
+                            <p class="card-text" id="cels">Temp in C</p>
                         </div>
                     </div>
                 </div>
@@ -76,7 +80,7 @@
                     <h4>Condition</h4>
                 </div>
                 <div class="card-body">
-                    <p id="condition">Condition</p>
+                    <p id="cond">Condition</p>
                 </div>
             </div>
         </div>
@@ -88,7 +92,7 @@
                         STRETCH GOAL
                     </p> -->
                 </div>
-                <img src="..." class="card-img-bottom" alt="wx icon">
+                <img src="..." class="card-img-bottom" id="icon" alt="wx icon">
             </div>
         </div>
     </div>
